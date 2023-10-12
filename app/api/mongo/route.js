@@ -11,12 +11,12 @@ export async function GET(request) {
   
   try {
     const database = client.db('');
-    const movies = database.collection('');
+    const pro = database.collection('');
     
     const query = { };
-    const movie = await movies.find(query).toArray();
+    const pro = await pros.find(query).toArray();
 
-    console.log(movie);
+    console.log(pros);
     return NextResponse.json({"a":400, try1})
   } finally {
    
