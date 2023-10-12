@@ -61,6 +61,12 @@ export default function Home() {
   }
 
   const addProduct = async (e) => {
+    e.preventDefault();
+    
+    if (!productForm.slug || !productForm.quantity || !productForm.price) {
+      setAlert("Please fill all the fields.");
+      return;
+    }
     try {
       const response = await fetch('/api/product', {
         method: 'POST',
